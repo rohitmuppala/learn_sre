@@ -1,0 +1,1 @@
+The game saves progress in the cloud.
