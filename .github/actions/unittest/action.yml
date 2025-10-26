@@ -1,0 +1,8 @@
+name: 'Unit Test'
+description: 'Performs unittesting'
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "I am doing unittesting"
+      shell: bash
+

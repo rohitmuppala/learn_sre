@@ -1,0 +1,22 @@
+name: Central Orchestrator
+
+on:
+  repository_dispatch:
+    types: [microservice-updated]
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run SAST Scan
+        uses: ./.github/actions/sast-scan
+
+      - name: Run SonarQube Scan
+        uses: ./.github/actions/sonar-scan
+
+      - name: Run Unittest
+        uses: ./.github/actions/unittest
+
